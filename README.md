@@ -1,68 +1,55 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+## Cotizador de Seguros
 
-### `npm start`
+En este proyecto se seguiran usando los conocimientos estudiados anteriormente en 
+los proyectos pasados y se agregaran nuevos conocimientos y librerias para obtener
+asi una aplicacion mas robusta, las ventajas que tenemos es que no se cargara
+una hoja de estilos con miles de ellos, sino que segun el componente mostrado se van cargando
+los styles components y ocultando segun sea el caso haciendo una aplicacion mas rapida
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Nuevos Conocimientos
 
-### `npm test`
+Style Components: Son hojas de estilo especificas para ciertos componentes, para aplicar esto usamos la libreria de Emotion.<br />
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Usamos las siguientes Extensions para facilitar la escritura de los Styles:
 
-### `npm run build`
+        - vscode-styled-components
+        - styled-components-snippets
+        - Styled-Snippets
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Crear Style Components
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+1.- Importamos la libreria en el componente a usar:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    import styled from '@emotion/styled';
 
-### `npm run eject`
+2.- Luego creamos una variable despues del import y fuera de la funcion del componente que contendra los estilos del elemento que queramos:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    const StyleName = styled.etiquetaHtml`
+        background-color: #26C6DA;
+        padding: 10px;
+        font-weight: bold;
+        color: #FFFFFF;
+    `;
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3.- Ahora para aplicar el style components en vez de colocar la etiqueta, se coloca el 
+nombre del styleComponents y este suplantara la etiqueta como si fuese un componente
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+        <ContenedorHeader>
+            <h1>Hola Mundo</h1>
+        </ContenedorHeader>
+    
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Librerias
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Emotion (emotion styled): se usa para generar de una manera muy simple codigo CSS para React.<br />
+Se instala desde NPM: [npm i @emotion/styled @emotion/core]
+Fuente [https://emotion.sh/docs/introduction]
 
-### Code Splitting
+### Helpers
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Se creo un helper el cual tiene las funciones de varios calculos 
