@@ -9,13 +9,15 @@ body {
 }
 ul {
   list-style: none;
-  padding: none;
-  margin: none;
+  padding: 0;
+  margin: 0;
 }
 span.resultado {
   position: relative;
   width: 100%;
 }
+
+/* Clases de TrasitionGroup */
 .resultado-enter {
   transition: .5s;
 }
@@ -34,3 +36,4 @@ span.resultado {
   opacity: 0;
   transform: translateY(-10%);
 }
+

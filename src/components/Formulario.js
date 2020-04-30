@@ -55,7 +55,7 @@ const Error = styled.div`
 `;
 
 //Componente
-const Formulario = () => {
+const Formulario = ({setResumen, setLoading}) => {
 
     //State de error de formulario  
     const [error, setError] = useState(false)
@@ -107,8 +107,23 @@ const Formulario = () => {
         //Incremento segun plan
         // Completo 50% - Basico 20%
         seguro = parseFloat(porcentajePlan(plan) * seguro).toFixed(2);
+
+        //Activamos el spinner 
+        setLoading(true);
+
+        //Colocamos un temporizador para que luego de un tiempo se desaparesca el spinner y actualice el Resumen del presupuesto
+        setTimeout(() => {
+            //Cerramos el spinner
+            setLoading(false);
+
+            //Pasar resumen total al State de resumen
+            setResumen({
+                datos,
+                cotizacion: Number(seguro)
+            })
+        }, 2000);
         
-        //Total
+        
     }
     
 
@@ -176,7 +191,8 @@ const Formulario = () => {
 };
 
 Formulario.propTypes = {
-    
+    setResumen: PropTypes.func.isRequired,
+    setLoading: PropTypes.func.isRequired
 };
 
 export default Formulario;

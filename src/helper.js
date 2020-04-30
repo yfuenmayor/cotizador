@@ -31,3 +31,8 @@ export function calcularMarca(marca) {
  export function porcentajePlan(plan) { 
      return (plan === 'basico' ? 1.20 : 1.50)
   }
+
+  //Colocando la primera letra mayuscula
+ export function mostrarUpercase(palabra){
+    return palabra.charAt(0).toUpperCase() + palabra.slice(1);
+  }
